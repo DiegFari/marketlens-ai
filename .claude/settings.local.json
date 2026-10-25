@@ -1,0 +1,20 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(.venv/bin/ruff format *)",
+      "Bash(.venv/bin/ruff check *)",
+      "Bash(.venv/bin/mypy)",
+      "Bash(.venv/bin/pytest -q -p no:warnings --cov)",
+      "Bash(.venv/bin/pytest -q -p no:warnings)",
+      "Bash(docker info *)",
+      "Bash(.venv/bin/python - /private/tmp/claude-501/-Users-diegofarinella-Desktop-azure/cab7bbc0-299b-4e3d-8ec7-0072b87f1865/scratchpad/api_stress.log)",
+      "Bash(.venv/bin/pytest -q -p no:warnings tests/agents/test_schemas.py)",
+      "Bash(sed -i '' -e 's/  # fmt: skip$//' tests/conftest.py && .venv/bin/ruff format -q . && .venv/bin/ruff check . && .venv/bin/mypy | tail -1 && .venv/bin/pytest -q -p no:warnings 2>&1 | tail -4)",
+      "Bash(.venv/bin/pip list *)",
+      "Read(//Library/Frameworks/Python.framework/Versions/**)"
+    ],
+    "additionalDirectories": [
+      "/Users/diegofarinella/Desktop/azure/tests"
+    ]
+  }
+}

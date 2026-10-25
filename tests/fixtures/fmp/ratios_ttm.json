@@ -1,0 +1,15 @@
+[
+  {
+    "symbol": "MSFT",
+    "grossProfitMarginTTM": 0.6876,
+    "operatingProfitMarginTTM": 0.4562,
+    "netProfitMarginTTM": 0.3615,
+    "currentRatioTTM": 1.35,
+    "priceToEarningsRatioTTM": 37.6,
+    "priceToBookRatioTTM": 11.2,
+    "priceToSalesRatioTTM": 13.5,
+    "debtToEquityRatioTTM": 0.33,
+    "dividendYieldTTM": 0.0065,
+    "someFutureFieldTTM": 42
+  }
+]

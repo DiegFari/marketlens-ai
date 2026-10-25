@@ -1,0 +1,81 @@
+{
+  "note": "SAP used gpt-oss-20b after the 120b model's free daily token cap was reached.",
+  "runs": [
+    {
+      "ticker": "MSFT",
+      "status": "complete",
+      "seconds": 69.8,
+      "llm_calls": 5,
+      "input_tokens": 9916,
+      "output_tokens": 5433,
+      "tool_calls": [
+        "read_articles"
+      ],
+      "structured_fallbacks": 0,
+      "failed_steps": [],
+      "warnings": [],
+      "developments": 6,
+      "irrelevant_articles": 0,
+      "model": "groq:openai/gpt-oss-120b"
+    },
+    {
+      "ticker": "NVDA",
+      "status": "complete",
+      "seconds": 89.1,
+      "llm_calls": 6,
+      "input_tokens": 16904,
+      "output_tokens": 4161,
+      "tool_calls": [
+        "read_articles",
+        "read_articles",
+        "read_articles"
+      ],
+      "structured_fallbacks": 0,
+      "failed_steps": [],
+      "warnings": [],
+      "developments": 6,
+      "irrelevant_articles": 23,
+      "model": "groq:openai/gpt-oss-120b"
+    },
+    {
+      "ticker": "ASML",
+      "status": "partial",
+      "seconds": 88.5,
+      "llm_calls": 5,
+      "input_tokens": 12272,
+      "output_tokens": 4525,
+      "tool_calls": [
+        "read_articles",
+        "read_articles"
+      ],
+      "structured_fallbacks": 0,
+      "failed_steps": [],
+      "warnings": [
+        "not_in_data_plan",
+        "thin_news_coverage"
+      ],
+      "developments": 6,
+      "irrelevant_articles": 0,
+      "model": "groq:openai/gpt-oss-120b"
+    },
+    {
+      "ticker": "SAP",
+      "status": "partial",
+      "seconds": 29.0,
+      "llm_calls": 4,
+      "input_tokens": 7853,
+      "output_tokens": 4939,
+      "tool_calls": [
+        "read_articles"
+      ],
+      "structured_fallbacks": 0,
+      "failed_steps": [],
+      "warnings": [
+        "not_in_data_plan"
+      ],
+      "developments": 5,
+      "irrelevant_articles": 0,
+      "model": "groq:openai/gpt-oss-20b"
+    }
+  ]
+}
