@@ -1,0 +1,13 @@
+[
+  {
+    "symbol": "MSFT",
+    "marketCap": 3808000000000,
+    "enterpriseValueTTM": 3790000000000,
+    "evToEBITDATTM": 24.8,
+    "currentRatioTTM": 1.35,
+    "returnOnEquityTTM": 0.3296,
+    "returnOnAssetsTTM": 0.1845,
+    "returnOnInvestedCapitalTTM": 0.2611,
+    "freeCashFlowYieldTTM": 0.0189
+  }
+]

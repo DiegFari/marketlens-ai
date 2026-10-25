@@ -1,0 +1,66 @@
+{
+  "status": "ok",
+  "totalResults": 6,
+  "articles": [
+    {
+      "source": {"id": null, "name": "TechWire"},
+      "author": "Jane Doe",
+      "title": "Microsoft expands Azure AI capacity in Europe",
+      "description": "The company announced new datacenter regions.",
+      "url": "https://techwire.example.com/azure-europe",
+      "urlToImage": null,
+      "publishedAt": "2026-10-20T09:00:00Z",
+      "content": "Microsoft said on Monday it would add three regions… [+2345 chars]"
+    },
+    {
+      "source": {"id": "reuters", "name": "Reuters"},
+      "author": null,
+      "title": "Microsoft beats quarterly revenue estimates on cloud demand",
+      "description": "Azure growth accelerated.",
+      "url": "https://reuters.example.com/msft-earnings",
+      "urlToImage": null,
+      "publishedAt": "2026-10-23T21:05:00Z",
+      "content": "Revenue rose 15% year on year."
+    },
+    {
+      "source": {"id": null, "name": "Syndicator"},
+      "author": null,
+      "title": "MICROSOFT BEATS QUARTERLY REVENUE ESTIMATES ON CLOUD DEMAND",
+      "description": "Syndicated copy.",
+      "url": "https://syndicator.example.com/copy",
+      "urlToImage": null,
+      "publishedAt": "2026-10-23T21:30:00Z",
+      "content": null
+    },
+    {
+      "source": {"id": null, "name": "[Removed]"},
+      "author": null,
+      "title": "[Removed]",
+      "description": "[Removed]",
+      "url": "https://removed.com",
+      "urlToImage": null,
+      "publishedAt": "2026-10-22T00:00:00Z",
+      "content": "[Removed]"
+    },
+    {
+      "source": {"id": null, "name": "Blog"},
+      "author": null,
+      "title": "An article with no link",
+      "description": null,
+      "url": null,
+      "urlToImage": null,
+      "publishedAt": "2026-10-21T00:00:00Z",
+      "content": null
+    },
+    {
+      "source": {"id": "reuters", "name": "Reuters"},
+      "author": null,
+      "title": "Duplicate URL with a different headline",
+      "description": null,
+      "url": "https://reuters.example.com/msft-earnings",
+      "urlToImage": null,
+      "publishedAt": "2026-10-19T00:00:00Z",
+      "content": null
+    }
+  ]
+}

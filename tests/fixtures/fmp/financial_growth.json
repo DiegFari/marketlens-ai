@@ -1,0 +1,14 @@
+[
+  {
+    "symbol": "MSFT",
+    "date": "2026-06-30",
+    "fiscalYear": "2026",
+    "period": "FY",
+    "reportedCurrency": "USD",
+    "revenueGrowth": 0.1778868679984666,
+    "grossProfitGrowth": 0.16283207748603612,
+    "netIncomeGrowth": 0.3134279990572708,
+    "epsgrowth": 0.3138686131386862,
+    "freeCashFlowGrowth": -0.06457108544776641
+  }
+]
