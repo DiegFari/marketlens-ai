@@ -4,7 +4,7 @@ from __future__ import annotations
 
 from functools import lru_cache
 
-from pydantic import Field
+from pydantic import Field, SecretStr
 from pydantic_settings import SettingsConfigDict
 
 from marketlens.core.config import EnvSettingsBase, LogFormat, LogLevel
@@ -18,6 +18,8 @@ class UISettings(EnvSettingsBase):
     request_timeout_seconds: float = Field(default=180.0, gt=0)
     log_level: LogLevel = "INFO"
     log_format: LogFormat = "console"
+    # When set, visitors must enter this password before using the app.
+    access_password: SecretStr | None = None
 
 
 @lru_cache

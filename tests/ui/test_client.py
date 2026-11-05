@@ -30,6 +30,20 @@ def test_analyze_posts_ticker() -> None:
     assert seen[0].content == b'{"ticker":"MSFT"}'
 
 
+def test_resolve_posts_message() -> None:
+    seen: list[httpx.Request] = []
+
+    def handler(request: httpx.Request) -> httpx.Response:
+        seen.append(request)
+        return httpx.Response(200, json={"ticker": "AMZN"})
+
+    result = _client(httpx.MockTransport(handler)).resolve("brief on AMZN")
+
+    assert result == {"ticker": "AMZN"}
+    assert seen[0].url.path == "/api/v1/analysis/resolve"
+    assert seen[0].content == b'{"message":"brief on AMZN"}'
+
+
 def test_error_envelope_is_decoded() -> None:
     transport = httpx.MockTransport(
         lambda _: httpx.Response(

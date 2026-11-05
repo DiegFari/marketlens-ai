@@ -42,6 +42,9 @@ class MarketLensClient:
     def analyze(self, ticker: str) -> dict[str, Any]:
         return self._request("POST", "/api/v1/analysis", json={"ticker": ticker})
 
+    def resolve(self, message: str) -> dict[str, Any]:
+        return self._request("POST", "/api/v1/analysis/resolve", json={"message": message})
+
     def close(self) -> None:
         self._client.close()
 

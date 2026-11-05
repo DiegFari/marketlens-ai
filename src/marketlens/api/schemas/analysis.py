@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 from datetime import datetime
+from typing import Literal
 
 from pydantic import BaseModel, ConfigDict, Field
 
@@ -13,6 +14,21 @@ class AnalysisRequest(BaseModel):
     model_config = ConfigDict(json_schema_extra={"examples": [{"ticker": "MSFT"}]})
 
     ticker: Ticker = Field(description="Stock ticker symbol, e.g. AAPL, MSFT, NVDA.")
+
+
+class ResolveRequest(BaseModel):
+    model_config = ConfigDict(
+        json_schema_extra={"examples": [{"message": "can you give me a brief on AMZN?"}]}
+    )
+
+    message: str = Field(min_length=1, max_length=500, description="Free-text request")
+
+
+class ResolveResponse(BaseModel):
+    ticker: str | None = Field(description="The ticker to analyse, or null if unclear")
+    company_name: str | None
+    clarification: str | None = Field(description="What to ask the user when ticker is null")
+    method: Literal["pattern", "llm"] = Field(description="How the ticker was found")
 
 
 class BriefingResponse(BaseModel):
