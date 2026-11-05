@@ -20,6 +20,7 @@ from fastapi.exceptions import RequestValidationError
 from fastapi.responses import JSONResponse
 from starlette.exceptions import HTTPException as StarletteHTTPException
 
+from marketlens.api.demo import DemoLimitError
 from marketlens.api.schemas.common import ErrorBody, ErrorResponse
 from marketlens.core.logging import request_id_ctx
 from marketlens.services.errors import (
@@ -54,6 +55,11 @@ class LLMNotConfiguredApiError(MarketLensError):
 class AnalysisTimeoutError(MarketLensError):
     status_code = 504
     code = "analysis_timeout"
+
+
+class ModelUnavailableError(MarketLensError):
+    status_code = 503
+    code = "model_unavailable"
 
 
 class InsufficientDataError(MarketLensError):
@@ -118,12 +124,23 @@ async def _handle_validation_error(_: Request, exc: Exception) -> JSONResponse:
     return error_response(422, "validation_error", "Request validation failed.", details)
 
 
-async def _handle_provider_error(_: Request, exc: Exception) -> JSONResponse:
-    assert isinstance(exc, DataProviderError)  # noqa: S101
-    status, code, message = next(
+def describe_provider_error(exc: DataProviderError) -> tuple[int, str, str]:
+    """(HTTP status, code, client-facing message) for a provider error."""
+    return next(
         (_PROVIDER_ERRORS[cls] for cls in type(exc).__mro__ if cls in _PROVIDER_ERRORS),
         _DEFAULT_PROVIDER_ERROR,
     )
+
+
+async def _handle_demo_limit(_: Request, exc: Exception) -> JSONResponse:
+    assert isinstance(exc, DemoLimitError)  # noqa: S101
+    status = 503 if exc.code == "busy" else 429
+    return error_response(status, exc.code, exc.message)
+
+
+async def _handle_provider_error(_: Request, exc: Exception) -> JSONResponse:
+    assert isinstance(exc, DataProviderError)  # noqa: S101
+    status, code, message = describe_provider_error(exc)
     logger.warning(
         "data provider error",
         extra={
@@ -156,3 +173,4 @@ def register_exception_handlers(app: FastAPI) -> None:
     app.add_exception_handler(MarketLensError, _handle_marketlens_error)
     app.add_exception_handler(RequestValidationError, _handle_validation_error)
     app.add_exception_handler(DataProviderError, _handle_provider_error)
+    app.add_exception_handler(DemoLimitError, _handle_demo_limit)

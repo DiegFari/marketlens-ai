@@ -1,13 +1,39 @@
-# Caddy obtains and renews a free Let's Encrypt certificate for SITE_ADDRESS
-# automatically, redirects http -> https, and proxies to the Streamlit UI
-# (including its websocket).
+# MarketLens AI front door.
+#
+# * Serves the React app from /srv.
+# * Proxies only the public API routes the app needs; everything else under /api is
+#   blocked, so internal endpoints are not reachable from the internet.
+# * SITE_ADDRESS is a host name (automatic HTTPS via Let's Encrypt) or ":80" for plain
+#   HTTP locally.
 {$SITE_ADDRESS} {
-	encode gzip
-	reverse_proxy ui:8501
+	encode zstd gzip
+
+	@public_api path /api/v1/briefings/* /api/v1/examples /api/v1/examples/* /health/*
+	handle @public_api {
+		reverse_proxy api:8000 {
+			# Stream agent progress to the browser as it happens.
+			flush_interval -1
+		}
+	}
+
+	handle /api/* {
+		respond "Not found" 404
+	}
+
+	handle {
+		root * /srv
+		@assets path /assets/*
+		header @assets Cache-Control "public, max-age=31536000, immutable"
+		try_files {path} /index.html
+		file_server
+	}
+
 	header {
 		Strict-Transport-Security "max-age=31536000"
 		X-Content-Type-Options "nosniff"
 		Referrer-Policy "strict-origin-when-cross-origin"
+		Permissions-Policy "camera=(), microphone=(), geolocation=()"
+		Content-Security-Policy "default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self'; frame-ancestors 'none'; base-uri 'self'"
 		-Server
 	}
 }

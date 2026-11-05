@@ -31,6 +31,16 @@ class ResolveResponse(BaseModel):
     method: Literal["pattern", "llm"] = Field(description="How the ticker was found")
 
 
+class NewsSource(BaseModel):
+    """An article cited by the News agent; ``id`` matches ``NewsDevelopment.article_ids``."""
+
+    id: int
+    title: str
+    url: str
+    source: str | None
+    published_at: datetime | None
+
+
 class BriefingResponse(BaseModel):
     """The briefing as Markdown, plus the structured outputs behind it."""
 
@@ -45,8 +55,12 @@ class BriefingResponse(BaseModel):
     news_analysis: NewsAnalysis | None
     snapshot: MarketSnapshot | None
     trace: list[TraceEvent] = Field(description="Per-step execution trace")
-    model: str = Field(description="Azure OpenAI deployment used")
+    model: str = Field(description="Language model used")
     prompt_version: str
+    sources: list[NewsSource] = Field(
+        default_factory=list, description="Articles cited by the news developments"
+    )
+    cached: bool = Field(default=False, description="Served from a recent identical run")
 
     @classmethod
     def from_state(
@@ -68,4 +82,29 @@ class BriefingResponse(BaseModel):
             trace=state.trace,
             model=model,
             prompt_version=prompt_version,
+            sources=_cited_sources(state),
         )
+
+
+def _cited_sources(state: BriefingState) -> list[NewsSource]:
+    if state.news is None or state.news_analysis is None:
+        return []
+    articles = state.news.articles
+    cited = sorted(
+        {
+            article_id
+            for dev in state.news_analysis.developments
+            for article_id in dev.article_ids
+            if 1 <= article_id <= len(articles)
+        }
+    )
+    return [
+        NewsSource(
+            id=article_id,
+            title=articles[article_id - 1].title,
+            url=articles[article_id - 1].url,
+            source=articles[article_id - 1].source,
+            published_at=articles[article_id - 1].published_at,
+        )
+        for article_id in cited
+    ]

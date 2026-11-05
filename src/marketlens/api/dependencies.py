@@ -7,6 +7,7 @@ from typing import Annotated
 from fastapi import Depends, Request
 
 from marketlens.agents import BriefingWorkflow
+from marketlens.api.demo import DemoGuard
 from marketlens.core.config import Settings
 from marketlens.llm import LLMClient
 from marketlens.services.errors import ProviderNotConfiguredError
@@ -50,7 +51,13 @@ def get_llm(request: Request) -> LLMClient | None:
     return llm
 
 
+def get_demo_guard(request: Request) -> DemoGuard:
+    guard: DemoGuard = request.app.state.demo
+    return guard
+
+
 SettingsDep = Annotated[Settings, Depends(get_app_settings)]
+DemoGuardDep = Annotated[DemoGuard, Depends(get_demo_guard)]
 LLMDep = Annotated[LLMClient | None, Depends(get_llm)]
 WorkflowDep = Annotated[BriefingWorkflow | None, Depends(get_workflow)]
 ProvidersDep = Annotated[DataProviders, Depends(get_providers)]

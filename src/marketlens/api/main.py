@@ -19,9 +19,10 @@ from fastapi.middleware.cors import CORSMiddleware
 
 from marketlens import __version__
 from marketlens.agents import AgentDependencies, BriefingWorkflow
+from marketlens.api.demo import DemoGuard
 from marketlens.api.errors import register_exception_handlers
 from marketlens.api.middleware import REQUEST_ID_HEADER, RequestContextMiddleware
-from marketlens.api.routes import analysis, companies, health
+from marketlens.api.routes import analysis, briefings, companies, health
 from marketlens.core.config import Settings, get_settings
 from marketlens.core.logging import configure_logging
 from marketlens.llm import LLMClient, build_llm_client
@@ -89,6 +90,8 @@ def create_app(
     app.state.providers = providers
     app.state.llm = llm  # tests inject a fake; otherwise built from settings
     app.state.workflow = None
+    app.state.demo = DemoGuard(settings.demo)
+    app.state.background = set()  # briefings that outlive a disconnected stream
 
     # Middleware added last runs first: CORS wraps the request-context middleware.
     app.add_middleware(RequestContextMiddleware)
@@ -104,5 +107,6 @@ def create_app(
 
     app.include_router(health.router)
     app.include_router(analysis.router, prefix=settings.api_prefix)
+    app.include_router(briefings.router, prefix=settings.api_prefix)
     app.include_router(companies.router, prefix=settings.api_prefix)
     return app

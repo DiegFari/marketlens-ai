@@ -3,7 +3,7 @@ VENV   ?= .venv
 BIN    := $(VENV)/bin
 
 .DEFAULT_GOAL := help
-.PHONY: help install lint format typecheck test check run-api run-ui docker-build docker-up docker-down clean
+.PHONY: help install lint format typecheck test check run-api run-ui web-install run-web check-web docker-build docker-up docker-down clean
 
 help: ## Show available targets
 	@grep -E '^[a-zA-Z_-]+:.*?## ' $(MAKEFILE_LIST) | awk 'BEGIN {FS = ":.*?## "}; {printf "  \033[36m%-14s\033[0m %s\n", $$1, $$2}'
@@ -35,8 +35,17 @@ check: lint typecheck test ## Everything CI runs
 run-api: ## Run the API with auto-reload on :8000
 	$(BIN)/uvicorn marketlens.api.main:create_app --factory --reload --port 8000
 
-run-ui: ## Run the Streamlit UI on :8501
+run-ui: ## Run the legacy Streamlit UI on :8501
 	$(BIN)/python -m marketlens.ui --server.port 8501
+
+web-install: ## Install frontend dependencies (needs Node 22)
+	cd frontend && npm ci
+
+run-web: ## Run the React frontend on :5173 (proxies /api to :8000)
+	cd frontend && npm run dev
+
+check-web: ## Frontend typecheck, tests and build
+	cd frontend && npm run typecheck && npm test && npm run build
 
 docker-build: ## Build both images
 	docker compose build

@@ -1,4 +1,5 @@
-# Local stack mirroring the Azure topology: two independent services.
+# Local stack mirroring production: the API plus the web frontend behind Caddy.
+#   docker compose up --build   ->  http://localhost:8080
 services:
   api:
     build:
@@ -9,19 +10,17 @@ services:
         required: false
     environment:
       LOG_FORMAT: console
-      CORS_ORIGINS: http://localhost:8501
     ports:
       - "8000:8000"
 
-  ui:
+  web:
     build:
       context: .
-      dockerfile: docker/ui.Dockerfile
+      dockerfile: docker/web.Dockerfile
     environment:
-      UI_API_BASE_URL: http://api:8000
-      UI_LOG_FORMAT: console
+      SITE_ADDRESS: ":80"   # plain HTTP locally; a host name in production enables HTTPS
     ports:
-      - "8501:8501"
+      - "8080:80"
     depends_on:
       api:
         condition: service_healthy
