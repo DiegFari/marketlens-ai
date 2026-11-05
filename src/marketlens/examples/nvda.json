@@ -1,0 +1,427 @@
+{
+ "ticker": "NVDA",
+ "company_name": "NVIDIA Corporation",
+ "status": "complete",
+ "generated_at": "2026-11-05T15:30:47.364847Z",
+ "report_markdown": "# Executive Market Briefing: NVIDIA Corporation (NVDA)\n\n*05 November 2026, 15:30 UTC \u00b7 Status: complete \u00b7 Confidence: medium*\n\n## Company Summary\n\nNVIDIA leads AI\u2011focused GPUs and data\u2011center solutions, posting 65% revenue growth and margins above 65%. Its balance sheet is solid, with low leverage and strong cash generation.\n\n*Technology \u00b7 Semiconductors \u00b7 US \u00b7 42,000 employees*\n\n## Recent Market Performance\n\nThe stock fell 7.2% to $185.78, trading 27% into its 52\u2011week range and 16% below the 50\u2011day average, reflecting recent weakness amid mixed short\u2011term signals.\n\n**Valuation.** Valuation is high relative to historical norms and sector peers, suggesting limited margin for error despite strong fundamentals.\n\n| Metric | Value |\n|---|---|\n| Share price | $185.78 (-7.2% on the day) |\n| Market capitalisation | $4.48T |\n| 52-week range | $164.27 to $243.37 (trading at 27% of range) |\n| vs 50 / 200-day average | -16.0% / -9.2% (mixed) |\n| Revenue growth | +65.5% (FY2026) |\n| P/E (TTM) | 23.4x |\n| Gross margin (TTM) | 74.7% |\n| Operating margin (TTM) | 65.2% |\n| Net margin (TTM) | 63.7% |\n| Return on equity (TTM) | 110.1% |\n| Debt / equity | 0.17 |\n| Free cash flow yield | 2.8% |\n| Dividend yield | 0.3% |\n\n## Key News Developments\n\nNvidia\u2019s near\u2011term outlook is shaped by tightening export controls that limit Chinese sales, a factor that weighs negatively. At the same time, strong ETF inflows, a modest stock rally, and a valuation gap highlighted by Morningstar provide a counterbalancing positive tone. Strategic supply\u2011chain moves\u2014Samsung HBM production and a $3.5\u202fbn stake in MediaTek\u2014support longer\u2011term growth, but the immediate impact of China\u2011related restrictions remains the most material investor concern.\n\n- **Export restrictions sharply curb Nvidia's China AI chip shipments**: Nvidia is limiting Chinese sales to roughly 1% of a $70\u202fbillion RTX order and is requiring cloud partners to sell at least 51% of services to non\u2011Chinese customers. The company is also asking data\u2011center partners to curb exposure to Chinese clients, signaling tighter export controls that could dent near\u2011term revenue from the China market. *(negative, high importance)* Sources: [Biztoc.com](https://biztoc.com/x/7d32a54fa6554be1), [Tom's Hardware UK](https://www.tomshardware.com/pc-components/gpus/nvidia-can-only-fulfill-1-percent-of-chinas-massive-usd70-billion-gpu-order-for-ai-chips-report-claims-supply-constraints-choke-export-friendly-rtx-pro-5500-deliveries-despite-huge-demand), [Crypto Briefing](https://cryptobriefing.com/nvidia-rtx-pro-5500-china-allocation/)\n- **ETF inflows add $1.3\u202fbn to Nvidia in two days**: Fifteen ETFs added a net $786.7\u202fmillion on Nov\u202f2, following $505.7\u202fmillion on Oct\u202f30, after a $608.6\u202fmillion outflow two days earlier, indicating strong institutional appetite for Nvidia despite the export\u2011control backdrop. *(positive, medium importance)* Sources: [Biztoc.com](https://biztoc.com/x/95c3094a805dde2d)\n- **Morningstar values Nvidia 31% below its fair\u2011value estimate**: Morningstar\u2019s valuation model places Nvidia 31% under its fair\u2011value target, suggesting the market may be discounting the stock relative to its growth prospects in AI hardware. *(positive, medium importance)* Sources: [Bitcoinfoundation.org](https://bitcoinfoundation.org/news/ai/high-growth-artificial-intelligence-stocks-morningstar-sees-nvidia-31-below-fair-value/)\n- **Nvidia stock climbs, lifting broader tech indexes**: Shares rose 1\u20113% in pre\u2011market and intraday trading, helping the S&P\u202f500 and Nasdaq gain despite broader market weakness and a drop in Apple, reflecting continued investor confidence in Nvidia\u2019s AI demand. *(positive, medium importance)* Sources: [Biztoc.com](https://biztoc.com/x/3b1e6779770045fa), [Biztoc.com](https://biztoc.com/x/125366a263576915), [WKMG News 6 & ClickOrlando](https://www.clickorlando.com/business/2026/11/03/asian-shares-are-mixed-as-tech-losses-offset-broader-gains-on-wall-street/)\n- **Nvidia backs MediaTek with $3.5\u202fbn to accelerate AI leadership**: Nvidia\u2019s $3.5\u202fbillion investment in Taiwan\u2019s MediaTek is aimed at expanding AI compute capabilities beyond smartphones into data\u2011center and automotive markets, deepening the ecosystem partnership. *(neutral, low importance)* Sources: [Digitimes](https://www.digitimes.com/news/a20261103PD238/mediatek-nvidia-taiwan-ceo-rick-tsai.html)\n- **Samsung to produce HBM base dies for Nvidia at Texas fab**: Samsung\u2019s second Texas foundry will manufacture high\u2011bandwidth memory (HBM) base dies for Nvidia, potentially easing supply\u2011chain bottlenecks for Nvidia\u2019s high\u2011end GPU offerings. *(neutral, low importance)* Sources: [Digitimes](https://www.digitimes.com/news/a20261104VL220/samsung-hbm-amd-texas-fab.html)\n\n## Bullish Signals\n\n- 65% YoY revenue growth FY2026 driven by AI demand.\n- Gross margin 74.7% and operating margin 65.2% demonstrate exceptional profitability.\n- ROE 110% and free cash flow yield 2.8% reflect strong cash generation.\n- $3.5bn MediaTek investment and Samsung HBM partnership expand AI ecosystem.\n- ETF inflows of $1.3bn in two days show robust institutional appetite.\n\n## Risk Factors\n\n- Export controls curtail Chinese AI chip shipments, pressuring near\u2011term revenue.\n- Valuation remains high (P/E 23.4x, P/B ~19.6x) versus sector peers.\n- Beta 2.2 indicates elevated price volatility.\n- Share down 7.2% today, 16% below 50\u2011day average, signaling recent weakness.\n- Supply\u2011chain reliance on Samsung HBM production could cause bottlenecks.\n\n## Overall Assessment\n\nNVIDIA combines outstanding profitability and rapid growth with a high\u2011valuation profile and heightened volatility. Near\u2011term revenue may be pressured by tighter China export controls, while strategic investments and strong institutional inflows support longer\u2011term upside. Investors should weigh the valuation premium against the company's cash\u2011rich balance sheet and growth prospects.\n\n## Confidence & Data Notes\n\n**Confidence: medium.** Market fundamentals are robust, but news sentiment is mixed\u2014positive ETF inflows and valuation gap versus negative export restrictions\u2014creating moderate confidence.\n\nNews coverage: Coverage is based on a limited set of articles published between Nov 3-4, 2026 from sources such as Biztoc, Tom's Hardware UK, Crypto Briefing, Digitimes, and others. The sample size is small and focuses on headline\u2011level events rather than deep financial disclosures.\n\nSources: market data from Financial Modeling Prep (quote as of 05 Nov 2026 15:28 UTC); news from NewsAPI (30 articles screened).\n\n---\n\n*Generated automatically from third-party data for research purposes. Not investment advice, and not a prediction of future prices. Verify material facts against primary sources.*\n",
+ "warnings": [],
+ "briefing": {
+  "company_summary": "NVIDIA leads AI\u2011focused GPUs and data\u2011center solutions, posting 65% revenue growth and margins above 65%. Its balance sheet is solid, with low leverage and strong cash generation.",
+  "market_performance": "The stock fell 7.2% to $185.78, trading 27% into its 52\u2011week range and 16% below the 50\u2011day average, reflecting recent weakness amid mixed short\u2011term signals.",
+  "bullish_signals": [
+   "65% YoY revenue growth FY2026 driven by AI demand.",
+   "Gross margin 74.7% and operating margin 65.2% demonstrate exceptional profitability.",
+   "ROE 110% and free cash flow yield 2.8% reflect strong cash generation.",
+   "$3.5bn MediaTek investment and Samsung HBM partnership expand AI ecosystem.",
+   "ETF inflows of $1.3bn in two days show robust institutional appetite."
+  ],
+  "risk_factors": [
+   "Export controls curtail Chinese AI chip shipments, pressuring near\u2011term revenue.",
+   "Valuation remains high (P/E 23.4x, P/B ~19.6x) versus sector peers.",
+   "Beta 2.2 indicates elevated price volatility.",
+   "Share down 7.2% today, 16% below 50\u2011day average, signaling recent weakness.",
+   "Supply\u2011chain reliance on Samsung HBM production could cause bottlenecks."
+  ],
+  "overall_assessment": "NVIDIA combines outstanding profitability and rapid growth with a high\u2011valuation profile and heightened volatility. Near\u2011term revenue may be pressured by tighter China export controls, while strategic investments and strong institutional inflows support longer\u2011term upside. Investors should weigh the valuation premium against the company's cash\u2011rich balance sheet and growth prospects.",
+  "confidence": "medium",
+  "confidence_note": "Market fundamentals are robust, but news sentiment is mixed\u2014positive ETF inflows and valuation gap versus negative export restrictions\u2014creating moderate confidence."
+ },
+ "market_analysis": {
+  "fundamentals_summary": "NVIDIA displays outstanding profitability and returns, with margins above 65% and ROE exceeding 110%. Revenue is surging (~65% YoY) and the balance sheet is robust, featuring low leverage and ample liquidity. However, valuation is steep across P/E, P/B, and P/S metrics, and the stock has shown notable recent weakness and high volatility.",
+  "strengths": [
+   {
+    "title": "Exceptional profitability",
+    "evidence": "gross_margin 0.7467 (74.7%), operating_margin 0.6521 (65.2%), net_margin 0.6366 (63.7%)"
+   },
+   {
+    "title": "Very high returns on capital",
+    "evidence": "return_on_equity 1.1011 (110.1%), return_on_assets 0.6022 (60.2%), return_on_invested_capital 0.5950 (59.5%)"
+   },
+   {
+    "title": "Rapid revenue expansion",
+    "evidence": "revenue_growth 0.6547 (65.5%) for FY2026"
+   },
+   {
+    "title": "Strong balance sheet",
+    "evidence": "debt_to_equity 0.1697 (16.97%), current_ratio 4.5889 (4.59x), free_cash_flow_yield 0.0284 (2.84%)"
+   }
+  ],
+  "concerns": [
+   {
+    "title": "Elevated valuation multiples",
+    "evidence": "price_to_book 19.63, price_to_sales 14.78, ev_to_ebitda 19.21, pe_ratio 23.37"
+   },
+   {
+    "title": "High stock volatility",
+    "evidence": "beta 2.216"
+   },
+   {
+    "title": "Recent price weakness",
+    "evidence": "day_change_percent -7.17%, price 185.78 vs 52w high 243.37 (23.66% below high), price vs 50d avg -16.01%"
+   },
+   {
+    "title": "Mixed short\u2011term trend",
+    "evidence": "price_signals.trend 'mixed', position_in_52w_range 0.272 (27.2% into range)"
+   }
+  ],
+  "valuation_view": "Valuation is high relative to historical norms and sector peers, suggesting limited margin for error despite strong fundamentals.",
+  "confidence": "high",
+  "data_gaps": []
+ },
+ "news_analysis": {
+  "summary": "Nvidia\u2019s near\u2011term outlook is shaped by tightening export controls that limit Chinese sales, a factor that weighs negatively. At the same time, strong ETF inflows, a modest stock rally, and a valuation gap highlighted by Morningstar provide a counterbalancing positive tone. Strategic supply\u2011chain moves\u2014Samsung HBM production and a $3.5\u202fbn stake in MediaTek\u2014support longer\u2011term growth, but the immediate impact of China\u2011related restrictions remains the most material investor concern.",
+  "developments": [
+   {
+    "headline": "Export restrictions sharply curb Nvidia's China AI chip shipments",
+    "summary": "Nvidia is limiting Chinese sales to roughly 1% of a $70\u202fbillion RTX order and is requiring cloud partners to sell at least 51% of services to non\u2011Chinese customers. The company is also asking data\u2011center partners to curb exposure to Chinese clients, signaling tighter export controls that could dent near\u2011term revenue from the China market.",
+    "sentiment": "negative",
+    "importance": "high",
+    "article_ids": [
+     2,
+     6,
+     17,
+     28,
+     30
+    ]
+   },
+   {
+    "headline": "ETF inflows add $1.3\u202fbn to Nvidia in two days",
+    "summary": "Fifteen ETFs added a net $786.7\u202fmillion on Nov\u202f2, following $505.7\u202fmillion on Oct\u202f30, after a $608.6\u202fmillion outflow two days earlier, indicating strong institutional appetite for Nvidia despite the export\u2011control backdrop.",
+    "sentiment": "positive",
+    "importance": "medium",
+    "article_ids": [
+     9
+    ]
+   },
+   {
+    "headline": "Morningstar values Nvidia 31% below its fair\u2011value estimate",
+    "summary": "Morningstar\u2019s valuation model places Nvidia 31% under its fair\u2011value target, suggesting the market may be discounting the stock relative to its growth prospects in AI hardware.",
+    "sentiment": "positive",
+    "importance": "medium",
+    "article_ids": [
+     15
+    ]
+   },
+   {
+    "headline": "Nvidia stock climbs, lifting broader tech indexes",
+    "summary": "Shares rose 1\u20113% in pre\u2011market and intraday trading, helping the S&P\u202f500 and Nasdaq gain despite broader market weakness and a drop in Apple, reflecting continued investor confidence in Nvidia\u2019s AI demand.",
+    "sentiment": "positive",
+    "importance": "medium",
+    "article_ids": [
+     1,
+     7,
+     24,
+     26,
+     30
+    ]
+   },
+   {
+    "headline": "Nvidia backs MediaTek with $3.5\u202fbn to accelerate AI leadership",
+    "summary": "Nvidia\u2019s $3.5\u202fbillion investment in Taiwan\u2019s MediaTek is aimed at expanding AI compute capabilities beyond smartphones into data\u2011center and automotive markets, deepening the ecosystem partnership.",
+    "sentiment": "neutral",
+    "importance": "low",
+    "article_ids": [
+     20
+    ]
+   },
+   {
+    "headline": "Samsung to produce HBM base dies for Nvidia at Texas fab",
+    "summary": "Samsung\u2019s second Texas foundry will manufacture high\u2011bandwidth memory (HBM) base dies for Nvidia, potentially easing supply\u2011chain bottlenecks for Nvidia\u2019s high\u2011end GPU offerings.",
+    "sentiment": "neutral",
+    "importance": "low",
+    "article_ids": [
+     16
+    ]
+   }
+  ],
+  "overall_sentiment": "mixed",
+  "sentiment_confidence": "medium",
+  "irrelevant_article_ids": [
+   3,
+   5,
+   8,
+   10,
+   11,
+   12,
+   13,
+   14,
+   18,
+   19,
+   21,
+   22,
+   23,
+   27,
+   29
+  ],
+  "coverage_note": "Coverage is based on a limited set of articles published between Nov 3-4, 2026 from sources such as Biztoc, Tom's Hardware UK, Crypto Briefing, Digitimes, and others. The sample size is small and focuses on headline\u2011level events rather than deep financial disclosures."
+ },
+ "snapshot": {
+  "symbol": "NVDA",
+  "quote": {
+   "symbol": "NVDA",
+   "name": "NVIDIA Corporation",
+   "price": 185.78,
+   "change": -14.35,
+   "change_percent": -7.17034,
+   "open": 196.07,
+   "previous_close": 200.13,
+   "day_low": 184.03,
+   "day_high": 196.24,
+   "year_low": 164.27,
+   "year_high": 243.37,
+   "volume": 78139946,
+   "market_cap": 4477298000000.0,
+   "avg_price_50d": 221.2012,
+   "avg_price_200d": 204.6722,
+   "exchange": "NASDAQ",
+   "as_of": "2026-11-05T15:28:55Z"
+  },
+  "profile": {
+   "symbol": "NVDA",
+   "name": "NVIDIA Corporation",
+   "description": "NVIDIA Corporation stands as a prominent provider of advanced graphics, computational, and networking solutions, operating across the United States, Taiwan, China, and numerous international markets. Its Graphics division encompasses GeForce GPUs, central to PC gaming and personal computing experiences, along with the GeForce NOW cloud gaming service and its supporting infrastructure, as well as dedicated solutions for various gaming platforms. For professional visualization, it provides Quadro and NVIDIA RTX GPUs for enterprise workstations, further offering vGPU software designed for cloud-centric visual and virtual computing, automotive platforms for in-vehicle infotainment, and the Omniverse software suite, facilitating 3D design and virtual world creation. The Compute & Networking segment is a cornerstone for AI, high-performance computing (HPC), and accelerated data center platforms. It integrates Mellanox networking and interconnect solutions, delivers automotive AI Cockpit technologies, fosters autonomous driving development through strategic agreements, and offers comprehensive autonomous vehicle solutions. This segment also manufactures cryptocurrency mining processors, supplies Jetson platforms for robotics and other embedded applications, and offers enterprise AI software, including NVIDIA AI Enterprise. These diverse offerings find widespread application across the gaming, professional visualization, data center, and automotive sectors. NVIDIA distributes its portfolio through a broad ecosystem, engaging original equipment and device manufacturers, system integrators, add-in board makers, retail channels, software vendors, internet and cloud service providers, automotive companies (both manufacturers and tier-1 suppliers), mapping firms, nascent technology ventures, and other industry stakeholders. A notable strategic partnership exists with Kroger Co. Founded in 1993, NVIDIA Corporation maintains its corporate headquarters in Santa Clara, California.",
+   "sector": "Technology",
+   "industry": "Semiconductors",
+   "country": "US",
+   "exchange": "NASDAQ",
+   "currency": "USD",
+   "ceo": "Jensen Huang",
+   "website": "https://www.nvidia.com",
+   "employees": 42000,
+   "ipo_date": "1999-01-22",
+   "beta": 2.216,
+   "is_etf": false,
+   "is_actively_trading": true
+  },
+  "metrics": {
+   "pe_ratio": 23.368553459119493,
+   "price_to_book": 19.625904866715576,
+   "price_to_sales": 14.778073004168744,
+   "ev_to_ebitda": 19.212613406072837,
+   "debt_to_equity": 0.1697061803444782,
+   "current_ratio": 4.588949069016016,
+   "return_on_equity": 1.1011463673627842,
+   "return_on_assets": 0.6022349752710197,
+   "return_on_invested_capital": 0.5950424906817126,
+   "gross_margin": 0.7467463667900016,
+   "operating_margin": 0.6521426284537362,
+   "net_margin": 0.6366294901458565,
+   "dividend_yield": 0.00279901,
+   "free_cash_flow_yield": 0.02836666221457674,
+   "revenue_growth": 0.654735357900948,
+   "revenue_growth_period": "FY2026"
+  },
+  "source": "financial_modeling_prep",
+  "retrieved_at": "2026-11-05T15:28:56.725569Z",
+  "warnings": []
+ },
+ "trace": [
+  {
+   "step": "supervisor",
+   "status": "succeeded",
+   "started_at": "2026-11-05T15:28:55.986729Z",
+   "duration_ms": 0.2,
+   "detail": "\u2192 collect_data (collect market data and news)",
+   "llm_calls": 0,
+   "input_tokens": 0,
+   "output_tokens": 0,
+   "tool_calls": [],
+   "structured_fallbacks": 0
+  },
+  {
+   "step": "collect_data",
+   "status": "succeeded",
+   "started_at": "2026-11-05T15:28:55.990122Z",
+   "duration_ms": 973.8,
+   "detail": "snapshot=yes, profile=yes, articles=30, ticker_not_found=False",
+   "llm_calls": 0,
+   "input_tokens": 0,
+   "output_tokens": 0,
+   "tool_calls": [],
+   "structured_fallbacks": 0
+  },
+  {
+   "step": "supervisor",
+   "status": "succeeded",
+   "started_at": "2026-11-05T15:28:56.965065Z",
+   "duration_ms": 0.2,
+   "detail": "\u2192 market_analyst, news_analyst (run market_analyst + news_analyst in parallel)",
+   "llm_calls": 0,
+   "input_tokens": 0,
+   "output_tokens": 0,
+   "tool_calls": [],
+   "structured_fallbacks": 0
+  },
+  {
+   "step": "market_analyst",
+   "status": "succeeded",
+   "started_at": "2026-11-05T15:28:56.968668Z",
+   "duration_ms": 2716.8,
+   "detail": "4 strengths, 4 concerns",
+   "llm_calls": 1,
+   "input_tokens": 1100,
+   "output_tokens": 1089,
+   "tool_calls": [],
+   "structured_fallbacks": 0
+  },
+  {
+   "step": "news_analyst",
+   "status": "succeeded",
+   "started_at": "2026-11-05T15:28:56.972183Z",
+   "duration_ms": 84856.0,
+   "detail": "6 developments from 30 articles, 15 judged irrelevant",
+   "llm_calls": 4,
+   "input_tokens": 12299,
+   "output_tokens": 4081,
+   "tool_calls": [
+    "read_articles",
+    "read_articles"
+   ],
+   "structured_fallbacks": 0
+  },
+  {
+   "step": "supervisor",
+   "status": "succeeded",
+   "started_at": "2026-11-05T15:30:21.830848Z",
+   "duration_ms": 0.2,
+   "detail": "\u2192 report_writer (synthesise the briefing)",
+   "llm_calls": 0,
+   "input_tokens": 0,
+   "output_tokens": 0,
+   "tool_calls": [],
+   "structured_fallbacks": 0
+  },
+  {
+   "step": "report_writer",
+   "status": "succeeded",
+   "started_at": "2026-11-05T15:30:21.833969Z",
+   "duration_ms": 25525.8,
+   "detail": "confidence=medium",
+   "llm_calls": 1,
+   "input_tokens": 2317,
+   "output_tokens": 917,
+   "tool_calls": [],
+   "structured_fallbacks": 0
+  },
+  {
+   "step": "supervisor",
+   "status": "succeeded",
+   "started_at": "2026-11-05T15:30:47.361956Z",
+   "duration_ms": 0.2,
+   "detail": "\u2192 finalize (all steps attempted)",
+   "llm_calls": 0,
+   "input_tokens": 0,
+   "output_tokens": 0,
+   "tool_calls": [],
+   "structured_fallbacks": 0
+  },
+  {
+   "step": "finalize",
+   "status": "succeeded",
+   "started_at": "2026-11-05T15:30:47.364631Z",
+   "duration_ms": 0.5,
+   "detail": "status=complete",
+   "llm_calls": 0,
+   "input_tokens": 0,
+   "output_tokens": 0,
+   "tool_calls": [],
+   "structured_fallbacks": 0
+  }
+ ],
+ "model": "groq:openai/gpt-oss-120b",
+ "prompt_version": "2026-10-25.3",
+ "sources": [
+  {
+   "id": 1,
+   "title": "Jim Cramer Sees These 'Non-Magnificent' Tech Stocks Emerging as Market Leaders While Nvidia, Microsoft St",
+   "url": "https://biztoc.com/x/3b1e6779770045fa",
+   "source": "Biztoc.com",
+   "published_at": "2026-11-04T15:27:25Z"
+  },
+  {
+   "id": 2,
+   "title": "Nvidia Is Telling Cloud Clients to Sell at Least 51% to Non-Chinese Customers",
+   "url": "https://biztoc.com/x/7d32a54fa6554be1",
+   "source": "Biztoc.com",
+   "published_at": "2026-11-04T14:25:51Z"
+  },
+  {
+   "id": 6,
+   "title": "Nvidia can only fulfill 1% of China\u2019s massive $70 billion GPU order for AI chips, report claims \u2014 supply constraints choke export-friendly RTX Pro 5500 deliveries despite huge demand",
+   "url": "https://www.tomshardware.com/pc-components/gpus/nvidia-can-only-fulfill-1-percent-of-chinas-massive-usd70-billion-gpu-order-for-ai-chips-report-claims-supply-constraints-choke-export-friendly-rtx-pro-5500-deliveries-despite-huge-demand",
+   "source": "Tom's Hardware UK",
+   "published_at": "2026-11-04T12:15:00Z"
+  },
+  {
+   "id": 7,
+   "title": "What Is Going On With Nvidia Stock on Wednesday?",
+   "url": "https://biztoc.com/x/125366a263576915",
+   "source": "Biztoc.com",
+   "published_at": "2026-11-04T12:07:51Z"
+  },
+  {
+   "id": 9,
+   "title": "55 ETFs Add to NVIDIA (NVDA) on Nov. 2",
+   "url": "https://biztoc.com/x/95c3094a805dde2d",
+   "source": "Biztoc.com",
+   "published_at": "2026-11-04T11:24:03Z"
+  },
+  {
+   "id": 15,
+   "title": "High Growth Artificial Intelligence Stocks: Morningstar Sees Nvidia 31% Below Fair Value",
+   "url": "https://bitcoinfoundation.org/news/ai/high-growth-artificial-intelligence-stocks-morningstar-sees-nvidia-31-below-fair-value/",
+   "source": "Bitcoinfoundation.org",
+   "published_at": "2026-11-04T08:02:21Z"
+  },
+  {
+   "id": 16,
+   "title": "Samsung to reportedly make AMD, Nvidia HBM base dies at second Texas fab",
+   "url": "https://www.digitimes.com/news/a20261104VL220/samsung-hbm-amd-texas-fab.html",
+   "source": "Digitimes",
+   "published_at": "2026-11-04T06:57:15Z"
+  },
+  {
+   "id": 17,
+   "title": "Nvidia allocates 1% of $70B RTX chip order to China clients",
+   "url": "https://cryptobriefing.com/nvidia-rtx-pro-5500-china-allocation/",
+   "source": "Crypto Briefing",
+   "published_at": "2026-11-04T03:21:42Z"
+  },
+  {
+   "id": 20,
+   "title": "MediaTek targets global AI leadership as Nvidia invests US$3.5 billion",
+   "url": "https://www.digitimes.com/news/a20261103PD238/mediatek-nvidia-taiwan-ceo-rick-tsai.html",
+   "source": "Digitimes",
+   "published_at": "2026-11-03T23:06:06Z"
+  },
+  {
+   "id": 24,
+   "title": "Nvidia and other Big Tech stocks lift the US market despite drops for Apple and much of Wall Street",
+   "url": "https://www.clickorlando.com/business/2026/11/03/asian-shares-are-mixed-as-tech-losses-offset-broader-gains-on-wall-street/",
+   "source": "WKMG News 6 & ClickOrlando",
+   "published_at": "2026-11-03T21:51:52Z"
+  },
+  {
+   "id": 26,
+   "title": "Nvidia Stock Climbs Amid Oil Price Drop",
+   "url": "https://biztoc.com/x/55078da47fefa9a3",
+   "source": "Biztoc.com",
+   "published_at": "2026-11-03T20:30:43Z"
+  },
+  {
+   "id": 28,
+   "title": "Nvidia Orders Data Center Partners to Limit Exposure to Chinese Customers",
+   "url": "https://www.breitbart.com/tech/2026/11/03/nvidia-orders-data-center-partners-to-limit-exposure-to-chinese-customers/",
+   "source": "Breitbart News",
+   "published_at": "2026-11-03T19:08:47Z"
+  },
+  {
+   "id": 30,
+   "title": "NVIDIA Rises 3% Despite AI CEO\u2019s Warning on Chinese Chip Competition; AMD Climbs 5%, Broadcom Gains 3%",
+   "url": "https://biztoc.com/x/7a8df787b17ade51",
+   "source": "Biztoc.com",
+   "published_at": "2026-11-03T18:57:58Z"
+  }
+ ],
+ "cached": false
+}

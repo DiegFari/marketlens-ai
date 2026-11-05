@@ -12,6 +12,7 @@ from marketlens.core.config import Settings, get_settings
 from tests.support import FakeSleep, MockAPI
 
 _ENV_PREFIXES = (
+    "DEMO_",
     "AZURE_",
     "FMP_",
     "NEWSAPI_",

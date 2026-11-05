@@ -39,13 +39,31 @@ jobs:
       - name: Test
         run: pytest --cov --cov-report=xml
 
+  frontend:
+    name: Frontend typecheck, test, build
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: frontend
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22.11.0"
+          cache: npm
+          cache-dependency-path: frontend/package-lock.json
+      - run: npm ci
+      - run: npm run typecheck
+      - run: npm test
+      - run: npm run build
+
   docker:
     name: Build images
     runs-on: ubuntu-latest
-    needs: quality
+    needs: [quality, frontend]
     strategy:
       matrix:
-        service: [api, ui]
+        service: [api, ui, web]
     steps:
       - uses: actions/checkout@v4
       - uses: docker/setup-buildx-action@v3

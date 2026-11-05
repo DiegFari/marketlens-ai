@@ -69,6 +69,19 @@ class TraceEvent(BaseModel):
     structured_fallbacks: int = 0
 
 
+class ProgressEvent(BaseModel):
+    """A step starting or finishing, streamed to live clients while a briefing runs."""
+
+    model_config = ConfigDict(frozen=True)
+
+    step: str
+    status: StepStatus | Literal["running"]
+    duration_ms: float | None = None
+    detail: str | None = None
+    llm_calls: int = 0
+    tool_calls: list[str] = Field(default_factory=list)
+
+
 def merge_status(
     left: dict[Step, StepStatus], right: dict[Step, StepStatus]
 ) -> dict[Step, StepStatus]:

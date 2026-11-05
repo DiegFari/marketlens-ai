@@ -39,7 +39,8 @@ class FMPQuote(_FMPModel):
     day_high: float | None = None
     year_low: float | None = None
     year_high: float | None = None
-    volume: int | None = None
+    # Intraday quotes can carry fractional volume (e.g. 14886580.5); keep it lenient.
+    volume: float | None = None
     market_cap: float | None = None
     price_avg50: float | None = None
     price_avg200: float | None = None
@@ -59,7 +60,7 @@ class FMPQuote(_FMPModel):
             day_high=self.day_high,
             year_low=self.year_low,
             year_high=self.year_high,
-            volume=self.volume,
+            volume=round(self.volume) if self.volume is not None else None,
             market_cap=self.market_cap,
             avg_price_50d=self.price_avg50,
             avg_price_200d=self.price_avg200,

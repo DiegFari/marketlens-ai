@@ -291,7 +291,12 @@ class BaseProviderClient:
         try:
             return model.model_validate(data)
         except ValidationError as exc:
+            # Field paths and error types only: values can be large or licensed content.
+            problems = "; ".join(
+                f"{'.'.join(str(p) for p in err['loc'])}: {err['type']}" for err in exc.errors()[:5]
+            )
             raise ProviderResponseError(
                 self.provider,
-                f"unexpected {model.__name__} payload ({exc.error_count()} validation errors)",
+                f"unexpected {model.__name__} payload ({exc.error_count()} validation "
+                f"errors: {problems})",
             ) from exc

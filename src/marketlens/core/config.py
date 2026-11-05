@@ -161,6 +161,26 @@ class StorageSettings(EnvSettingsBase):
         return bool(self.account_url or self.connection_string)
 
 
+class DemoSettings(EnvSettingsBase):
+    """Protects free-tier quotas when the app is open to the public.
+
+    Repeat requests for a ticker are served from a short-lived cache and cost nothing;
+    new briefings are capped per day (all visitors) and per hour (each visitor).
+    """
+
+    model_config = SettingsConfigDict(env_prefix="DEMO_")
+
+    limits_enabled: bool = False
+    # Groq's free tier allows ~200k tokens/day per model; a briefing uses ~16k.
+    daily_briefings: int = Field(default=10, ge=0)
+    hourly_requests_per_client: int = Field(default=5, ge=0)
+    # Free model tiers cap tokens per minute; one briefing at a time stays under them.
+    max_concurrent_briefings: int = Field(default=1, ge=1, le=10)
+    # How long a request waits for a free slot before being told the agents are busy.
+    queue_timeout_seconds: float = Field(default=90, gt=0)
+    cache_ttl_minutes: float = Field(default=360, ge=0)
+
+
 class Settings(EnvSettingsBase):
     """Top-level application settings."""
 
@@ -183,6 +203,7 @@ class Settings(EnvSettingsBase):
     agents: AgentSettings = Field(default_factory=AgentSettings)
     data_providers: DataProviderSettings = Field(default_factory=DataProviderSettings)
     storage: StorageSettings = Field(default_factory=StorageSettings)
+    demo: DemoSettings = Field(default_factory=DemoSettings)
 
     @field_validator("log_level", mode="before")
     @classmethod

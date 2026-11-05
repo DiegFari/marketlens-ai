@@ -16,6 +16,7 @@ from __future__ import annotations
 
 import asyncio
 import logging
+from collections.abc import Awaitable, Callable
 from typing import Any
 
 from langgraph.graph import END, START, StateGraph
@@ -30,9 +31,18 @@ from marketlens.agents.nodes.news import news_analyst
 from marketlens.agents.nodes.report import report_writer
 from marketlens.agents.nodes.supervisor import supervisor
 from marketlens.agents.rendering import determine_status, render_markdown
-from marketlens.agents.state import SUPERVISOR, BriefingState, Step
+from marketlens.agents.state import (
+    SUPERVISOR,
+    BriefingState,
+    ProgressEvent,
+    Step,
+    StepStatus,
+    TraceEvent,
+)
 
 logger = logging.getLogger("marketlens.agents")
+
+ProgressCallback = Callable[[ProgressEvent], Awaitable[None]]
 
 WORKERS = (Step.COLLECT_DATA, Step.MARKET_ANALYST, Step.NEWS_ANALYST, Step.REPORT_WRITER)
 # Each supervisor turn plus its workers is ~2 graph steps; a normal run needs ~10.
@@ -107,7 +117,8 @@ class BriefingWorkflow:
     def model_name(self) -> str:
         return self._deps.llm.model_name
 
-    async def run(self, ticker: str) -> BriefingState:
+    async def run(self, ticker: str, on_progress: ProgressCallback | None = None) -> BriefingState:
+        """Run the graph. ``on_progress`` is told when steps start and finish (live UIs)."""
         final: Any = None
 
         async def drive() -> None:
@@ -119,8 +130,12 @@ class BriefingWorkflow:
             ):
                 if mode == "values":
                     final = chunk
-                elif self._deps.settings.debug:
+                    continue
+                if self._deps.settings.debug:
                     logger.debug("graph update", extra={"update": _summarise(chunk)})
+                if on_progress is not None:
+                    for event in progress_events(chunk):
+                        await on_progress(event)
 
         try:
             await asyncio.wait_for(drive(), self._deps.settings.workflow_timeout_seconds)
@@ -135,6 +150,39 @@ class BriefingWorkflow:
             state = state.model_copy(update={"status": status})
             state = state.model_copy(update={"report_markdown": render_markdown(state)})
         return state
+
+
+def progress_events(update: Any) -> list[ProgressEvent]:
+    """Translate one graph update into step started/finished events.
+
+    The supervisor's plan says which steps start next (and which it skipped); a worker's
+    trace entry says how it finished.
+    """
+    if not isinstance(update, dict):
+        return []
+    events: list[ProgressEvent] = []
+    for node, value in update.items():
+        if not isinstance(value, dict):
+            continue
+        if node == SUPERVISOR:
+            for step, status in (value.get("step_status") or {}).items():
+                events.append(ProgressEvent(step=Step(step).value, status=StepStatus(status)))
+            for step in value.get("next_steps") or []:
+                events.append(ProgressEvent(step=Step(step).value, status="running"))
+            continue
+        for raw in value.get("trace") or []:
+            trace = raw if isinstance(raw, TraceEvent) else TraceEvent.model_validate(raw)
+            events.append(
+                ProgressEvent(
+                    step=trace.step,
+                    status=trace.status,
+                    duration_ms=trace.duration_ms,
+                    detail=trace.detail,
+                    llm_calls=trace.llm_calls,
+                    tool_calls=trace.tool_calls,
+                )
+            )
+    return events
 
 
 def _summarise(update: Any) -> dict[str, list[str]]:

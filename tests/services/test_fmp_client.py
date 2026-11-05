@@ -113,6 +113,27 @@ async def test_malformed_payload_is_a_response_error(
         await client.get_quote("MSFT")
 
 
+async def test_fractional_intraday_volume_is_accepted(client: FMPClient, mock_api: MockAPI) -> None:
+    raw = load_fixture("fmp/quote.json")
+    raw[0]["volume"] = 14886580.6
+    mock_api.add("/quote", httpx.Response(200, json=raw))
+
+    quote = await client.get_quote("MSFT")
+
+    assert quote.volume == 14_886_581
+
+
+async def test_response_error_names_the_failing_fields(
+    client: FMPClient, mock_api: MockAPI
+) -> None:
+    mock_api.add("/quote", httpx.Response(200, json=[{"symbol": "MSFT", "price": "n/a"}]))
+
+    with pytest.raises(ProviderResponseError) as exc_info:
+        await client.get_quote("MSFT")
+
+    assert "price: float_parsing" in exc_info.value.message
+
+
 async def test_financial_metrics_merge_both_endpoints(client: FMPClient, mock_api: MockAPI) -> None:
     _add_all(mock_api)
 

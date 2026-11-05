@@ -65,12 +65,16 @@ async def collect_data(
             )
             profile = await _profile_fallback(deps, ticker, warnings)
         except DataProviderError as exc:
+            logger.warning(
+                "market data unavailable",
+                extra={"ticker": ticker, "error": type(exc).__name__, "detail": exc.message},
+            )
             warnings.append(
                 _warn(
                     MARKET,
                     "market_data_unavailable",
-                    f"Market data was temporarily unavailable ({type(exc).__name__}); "
-                    "financial figures are missing from this briefing.",
+                    "Market data was temporarily unavailable; financial figures are missing "
+                    "from this briefing.",
                 )
             )
             profile = await _profile_fallback(deps, ticker, warnings)

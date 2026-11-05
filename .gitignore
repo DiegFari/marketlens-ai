@@ -27,3 +27,8 @@ htmlcov/
 
 # Provider data captured by scripts/probe_providers.py (licensed content)
 samples/
+
+# Frontend
+frontend/node_modules/
+frontend/dist/
+*.tsbuildinfo
