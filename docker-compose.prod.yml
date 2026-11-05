@@ -1,0 +1,52 @@
+# Production stack for a single small Linux server (e.g. a 1-core / 2 GB VPS).
+#
+#   docker compose -f docker-compose.prod.yml up -d --build
+#
+# Only Caddy is reachable from the internet (ports 80/443, automatic HTTPS). The API
+# and the UI talk to each other on a private Docker network and publish no ports.
+# See docs/deploy.md.
+services:
+  api:
+    build:
+      context: .
+      dockerfile: docker/api.Dockerfile
+    env_file: .env
+    environment:
+      LOG_FORMAT: json
+      ENVIRONMENT: prod
+      WEB_CONCURRENCY: "1"   # one core; also keeps the in-process cache shared
+    restart: unless-stopped
+    mem_limit: 900m
+
+  ui:
+    build:
+      context: .
+      dockerfile: docker/ui.Dockerfile
+    environment:
+      UI_API_BASE_URL: http://api:8000
+      # Required: visitors must enter this before they can use your API quotas.
+      UI_ACCESS_PASSWORD: ${UI_ACCESS_PASSWORD:?set UI_ACCESS_PASSWORD in .env}
+    restart: unless-stopped
+    mem_limit: 500m
+    depends_on:
+      api:
+        condition: service_healthy
+
+  caddy:
+    image: caddy:2.8-alpine
+    environment:
+      SITE_ADDRESS: ${SITE_ADDRESS:?set SITE_ADDRESS in .env}
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./deploy/Caddyfile:/etc/caddy/Caddyfile:ro
+      - caddy_data:/data
+      - caddy_config:/config
+    restart: unless-stopped
+    depends_on:
+      - ui
+
+volumes:
+  caddy_data:     # HTTPS certificates; keep it so they are not re-issued on restart
+  caddy_config:

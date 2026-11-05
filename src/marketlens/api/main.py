@@ -39,6 +39,7 @@ async def lifespan(app: FastAPI) -> AsyncIterator[None]:
     llm: LLMClient | None = app.state.llm
     if llm is None and settings.llm_is_configured:
         llm = build_llm_client(settings)
+    app.state.llm = llm
     app.state.workflow = (
         BriefingWorkflow(
             AgentDependencies(

@@ -8,6 +8,7 @@ from fastapi import Depends, Request
 
 from marketlens.agents import BriefingWorkflow
 from marketlens.core.config import Settings
+from marketlens.llm import LLMClient
 from marketlens.services.errors import ProviderNotConfiguredError
 from marketlens.services.protocols import MarketDataProvider, NewsProvider
 from marketlens.services.registry import DataProviders
@@ -44,7 +45,13 @@ def get_workflow(request: Request) -> BriefingWorkflow | None:
     return workflow
 
 
+def get_llm(request: Request) -> LLMClient | None:
+    llm: LLMClient | None = request.app.state.llm
+    return llm
+
+
 SettingsDep = Annotated[Settings, Depends(get_app_settings)]
+LLMDep = Annotated[LLMClient | None, Depends(get_llm)]
 WorkflowDep = Annotated[BriefingWorkflow | None, Depends(get_workflow)]
 ProvidersDep = Annotated[DataProviders, Depends(get_providers)]
 MarketDataDep = Annotated[MarketDataProvider, Depends(get_market_data)]

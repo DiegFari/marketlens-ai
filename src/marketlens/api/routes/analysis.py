@@ -7,13 +7,19 @@ import logging
 from fastapi import APIRouter
 
 from marketlens.agents import PROMPT_VERSION, BriefingStatus, WorkflowTimeoutError
-from marketlens.api.dependencies import SettingsDep, WorkflowDep
+from marketlens.agents.resolver import resolve_request
+from marketlens.api.dependencies import LLMDep, SettingsDep, WorkflowDep
 from marketlens.api.errors import (
     AnalysisTimeoutError,
     InsufficientDataError,
     LLMNotConfiguredApiError,
 )
-from marketlens.api.schemas.analysis import AnalysisRequest, BriefingResponse
+from marketlens.api.schemas.analysis import (
+    AnalysisRequest,
+    BriefingResponse,
+    ResolveRequest,
+    ResolveResponse,
+)
 from marketlens.api.schemas.common import ErrorResponse
 from marketlens.services.errors import TickerNotFoundError
 
@@ -71,3 +77,13 @@ async def create_analysis(
     return BriefingResponse.from_state(
         state, model=workflow.model_name, prompt_version=PROMPT_VERSION
     )
+
+
+@router.post("/resolve", response_model=ResolveResponse)
+async def resolve(request: ResolveRequest, llm: LLMDep) -> ResolveResponse:
+    """Turn a free-text request ("brief on Amazon?") into a ticker, or a question back.
+
+    A plain ticker is matched without a model call; anything else uses one short call.
+    """
+    resolved = await resolve_request(request.message, llm)
+    return ResolveResponse(**resolved.model_dump())
